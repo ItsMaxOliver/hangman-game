@@ -17,21 +17,43 @@
 <body>
 
     <div class="container">
-       
-        <div class="col-12 landing-page"> <!--Shows when the page loads-->
-            <h1>Let's Play Hangman!</h1>
-            <h5>Press Play to Begin</h5>
-            <button class="play">Play</button>
-        </div> <!--/.landing-page-->
 
-        <div class="col-12 choose-category"> <!--Shows when the user presses play on the landing page-->
-            <h1>Choose a Category</h1>
-            <button class="tv">TV Shows</button>
-            <button class="mov">Movies</button>
-        </div> <!--/.choose-category-->
+        <div class="row">
+
+            <div class="col-12 landing-page"> <!--Shows when the page loads-->
+                <h1>Let's Play Hangman!</h1>
+                <h5>Press Play to Begin</h5>
+                <button class="play">Play</button>
+            </div> <!--/.landing-page-->
+
+        </div> <!--/.row with .landing-page-->
+
+        <div class="row">
+            
+            <div class="col-12 choose-category"> <!--Shows when the user presses play on the landing page-->
+                <h1>Choose a Category</h1>
+                <button class="tv">TV Shows</button>
+                <button class="mov">Movies</button>
+            </div> <!--/.choose-category-->
+
+        </div> <!--/.row with .choose-category-->
 
         <div class="row"> <!--Shows when the user chooses a category-->
             
+            <div class="col-7 blanks"> <!--displays blanks the length of randomly chosen word from word bank-->
+                
+            </div> <!--/.blanks-->
+            
+            <div class="col-5 hangman-body-box"> <!--Every time a user guesses a letter wrong a piece of the body is added-->
+                <div class="hangman-body">
+                    
+                </div>
+            </div> <!--/.hangman-body-box-->
+            
+        </div> <!--/.row with .blanks and .hangman-body-box-->
+
+        <div class="row"> <!--Shows when the user chooses a category-->
+
             <div class="col-7 letter-bank">
                 <button class="a">a</button>
                 <button class="b">b</button>
@@ -63,9 +85,10 @@
 
             <div class="col-5 guessed-letters"> <!--Shows when the user guesses a letter-->
                 <p class="guessed-letters-paragraph">Guessed letters: </p>
+                <p class="guesses-left">Guesses left: </p>
             </div> <!--/.guessed-letters-->
 
-        </div> <!--/.row-->
+        </div> <!--/.row with .letter-bank and .guessed-letters-->
 
     </div> <!--/.container-->
 
