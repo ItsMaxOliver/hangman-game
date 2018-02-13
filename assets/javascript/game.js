@@ -24,7 +24,7 @@ for (var i = 0; i < Game.movie.length; i++) {
 }
 
 document.onkeyup = function(event) {
-    for (var i = 0; i <=Game.guessCount; i++){   
+    for (var i = 0; i <= Game.guessCount; i++){   
         var userGuess = event.key;
         console.log(userGuess); // shows what letter was typed by the player in the console
         Game.guessedLetters.push(userGuess); // pushes the userGuess into the guessedLetters array
