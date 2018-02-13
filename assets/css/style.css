@@ -6,4 +6,11 @@
 }
 #blank-underscores {
     letter-spacing: 4px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
 }
