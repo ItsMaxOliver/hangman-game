@@ -9,7 +9,7 @@ hangmanArr : [
     ]
 };
 
-window.onload = function showBlanks(){
+function showBlanks() {
     Game.movie = Game.moviesArr[Math.floor(Math.random() * Game.moviesArr.length)]; // chooses a random word from moviesArr and assigns it to Game.movie
     for (var i = 0; i < Game.movie.length; i++) {
         if (Game.movie[i] === " ") {
@@ -22,22 +22,17 @@ window.onload = function showBlanks(){
     }
 }
 
-document.onkeyup = function showGuessedLetters(event) {  
+document.onkeyup = (function showGuessedLetters(event) {  
     var userGuess = event.key;
         Game.guessedLetters.push(userGuess); // pushes the userGuess into the guessedLetters array
         document.getElementById("guessed-letters-list").innerHTML = Game.guessedLetters.join(", "); // displays the guessed letters under the hangman box
-}
+});
 
 //check that the user doesn't guess a letter more than once and that the counter doesn't count it against them if they do
 //
-//
-//
-//
-//
-//
-
 
 document.onkeydown = (function replaceBlank(event) {
+    
     var letter = event.key; 
     var found = false; // assumes that they will guess wrong
         for (var i = 0; i < Game.movie.length; i++) {
@@ -70,9 +65,13 @@ function deadAlert() {
 var win = setInterval(winAlert, 1500); // delays the function so that the user sees that they have guessed the word completely
 
 function winAlert() {
+    //var numWins = 0;
     if (Game.movie.toLowerCase() === Game.blankSpaces.join("")) {
         alert("You WIN!"); //alerts user that they won
         clearInterval(win); // makes it so that the alert doesn't repeat
-        window.location.reload(); // meakes the window refresh to play a new game
+        //numWins = numWins + 1;
+        //document.getElementById("number-of-wins").innerHTML = numWins;
     }
 };
+
+window.onload = showBlanks();
