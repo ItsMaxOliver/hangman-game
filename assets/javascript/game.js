@@ -45,12 +45,32 @@ document.onkeydown = (function replaceBlank(event) {
             document.getElementById("guesses-left").innerHTML = Game.guessesLeft;
             document.getElementById("hangman").src = Game.hangmanArr[Game.guessesLeft];
         }
+        
 });
 
-//check that the user doesn't guess a letter more than once and that the counter doesn't count it against them if they do
-
 //end game when guessesLeft = 0
+var delay = setInterval(deadAlert, 1500); // delays the function so that the entire hangman is seen
+   
+function deadAlert() {
+    if (Game.guessesLeft === 0) {
+        alert("Sorry, you died!"); //alerts user that they lost
+        clearInterval(delay); // makes it so that the alert doesn't repeat
+        window.location.reload(); // makes the window refresh to play a new game
+        }
+}
 
 //check when user completes word and say "you Win!"
+var win = setInterval(winAlert, 1500); // delays the function so that the user sees that they have guessed the word completely
 
-//ask if user wants to play again
+function winAlert() {
+    if (Game.movie.toLowerCase() === Game.blankSpaces.join("")) {
+        alert("You WIN!"); //alerts user that they won
+        clearInterval(win); // makes it so that the alert doesn't repeat
+        window.location.reload(); // meakes the window refresh to play a new game
+    }
+}
+
+//check that the user doesn't guess a letter more than once and that the counter doesn't count it against them if they do
+function checkForLetter(){
+    
+}
