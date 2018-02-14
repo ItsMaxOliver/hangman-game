@@ -21,6 +21,7 @@
 
             <div class="col-12 landing-page"> <!--Shows when the page loads-->
                 <h1>Let's Play Hangman!</h1>
+                <h4>Can You Guess The Movie Title?</h4>
                 
             </div> <!--/.landing-page-->
 
@@ -33,9 +34,7 @@
             </div> <!--/.blanks-->
             
             <div class="col-5 hangman-body-box"> <!--Every time a user guesses a letter wrong a piece of the body is added-->
-                <div class="hangman-body">
-                    
-                </div>
+                <img id="hangman" src="assets/images/hangman-base.png">
             </div> <!--/.hangman-body-box-->
             
         </div> <!--/.row with .blanks and .hangman-body-box-->
@@ -44,7 +43,7 @@
 
             <div class="col-5 guessed-letters"> <!--Shows when the user guesses a letter-->
                 <p>Guessed letters: <span id="guessed-letters-list"></span></p>
-                <p>Guesses left: <span id="guesses-left"> </span></p>
+                <p>Guesses left: <span id="guesses-left">6</span></p>
             </div> <!--/.guessed-letters-->
 
         </div> <!--/.row with .letter-bank and .guessed-letters-->
