@@ -24,28 +24,35 @@ window.onload = function showBlanks(){
 
 document.onkeyup = function showGuessedLetters(event) {  
     var userGuess = event.key;
-    Game.guessedLetters.push(userGuess); // pushes the userGuess into the guessedLetters array
-    document.getElementById("guessed-letters-list").innerHTML = Game.guessedLetters.join(", "); // displays the guessed letters under the hangman box
+        Game.guessedLetters.push(userGuess); // pushes the userGuess into the guessedLetters array
+        document.getElementById("guessed-letters-list").innerHTML = Game.guessedLetters.join(", "); // displays the guessed letters under the hangman box
 }
+
+//check that the user doesn't guess a letter more than once and that the counter doesn't count it against them if they do
+//
+//
+//
+//
+//
+//
+
 
 document.onkeydown = (function replaceBlank(event) {
     var letter = event.key; 
-    var found = false;
+    var found = false; // assumes that they will guess wrong
         for (var i = 0; i < Game.movie.length; i++) {
             if (letter === Game.movie[i].toLowerCase()) {
                //replace blank with letter
                 Game.blankSpaces[i] = letter;
                 document.getElementById("blank-underscores").innerHTML = Game.blankSpaces.join("");
-                found = true;
+                found = true; // they got the letter correct so no deduction
             }
         }
-    // create a statement that replaces the images of the hangman when the letter they guess doesn't match one in the random word
-        if (found === false) {
+        if (found === false) { //they didn't guess correctly
             Game.guessesLeft = Game.guessesLeft - 1;
-            document.getElementById("guesses-left").innerHTML = Game.guessesLeft;
-            document.getElementById("hangman").src = Game.hangmanArr[Game.guessesLeft];
-        }
-        
+            document.getElementById("guesses-left").innerHTML = Game.guessesLeft; // displays new number of guesses left
+            document.getElementById("hangman").src = Game.hangmanArr[Game.guessesLeft]; // replaces the image of the hangman when the letter they guess doesn't match one in the random word
+        }  
 });
 
 //end game when guessesLeft = 0
@@ -57,7 +64,7 @@ function deadAlert() {
         clearInterval(delay); // makes it so that the alert doesn't repeat
         window.location.reload(); // makes the window refresh to play a new game
         }
-}
+};
 
 //check when user completes word and say "you Win!"
 var win = setInterval(winAlert, 1500); // delays the function so that the user sees that they have guessed the word completely
@@ -68,9 +75,4 @@ function winAlert() {
         clearInterval(win); // makes it so that the alert doesn't repeat
         window.location.reload(); // meakes the window refresh to play a new game
     }
-}
-
-//check that the user doesn't guess a letter more than once and that the counter doesn't count it against them if they do
-function checkForLetter(){
-    
-}
+};
