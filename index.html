@@ -22,12 +22,12 @@
             <div class="col-12 landing-page"> <!--Shows when the page loads-->
                 <h1>Let's Play Hangman!</h1>
                 <h4>Can You Guess The Movie Title?</h4>
-                
+                <p>Type a letter to begin!</p>
             </div> <!--/.landing-page-->
 
         </div> <!--/.row with .landing-page-->
 
-        <div class="row"> <!--Shows when the user presses play-->
+        <div class="row"> <!--Shows when the page loads-->
             
             <div class="col-7 blanks"> <!--displays blanks the length of randomly chosen word from word bank-->
                 <p id="blank-underscores"></p>
@@ -39,11 +39,12 @@
             
         </div> <!--/.row with .blanks and .hangman-body-box-->
 
-        <div class="row"> <!--Shows when the user presses play-->
+        <div class="row"> <!--Shows when the page loads-->
 
-            <div class="col-5 guessed-letters"> <!--Shows when the user guesses a letter-->
-                <p>Guessed letters: <span id="guessed-letters-list"></span></p>
-                <p>Guesses left: <span id="guesses-left">6</span></p>
+            <div class="col-5 guessed-letters"> <!--Shows when the page loads-->
+                <p>Guessed letters: <span id="guessed-letters-list"></span></p> <!--Shows the letters the user has guessed-->
+                <p>Guesses left: <span id="guesses-left">6</span></p> <!--Shows how many wrong guesses the user has left-->
+                <!--<p>You've won <span id="number-of-wins">0</span> games in a row.</p>-->
             </div> <!--/.guessed-letters-->
 
         </div> <!--/.row with .letter-bank and .guessed-letters-->
