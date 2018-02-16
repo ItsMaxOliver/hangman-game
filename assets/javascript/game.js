@@ -6,7 +6,8 @@ moviesArr : [
     "The Shawshank Redemption", "The Godfather", "Inception", "Pulp Fiction", "The Dark Knight", "Fight Club", "Goodfellas", "Casablanca", "Raiders of the Lost Ark", "The Silence of the Lambs", "Memento", "Forrest Gump", "Apocalypse", "Citizen Kane", "Taxi Driver"],
 hangmanArr : [
     "assets/images/hangman-arm2.png", "assets/images/hangman-arm1.png", "assets/images/hangman-leg2.png", "assets/images/hangman-leg1.png", "assets/images/hangman-body.png", "assets/images/hangman-head.png"
-    ]
+    ],
+numWins : 0
 };
 
 function showBlanks() {
@@ -65,12 +66,16 @@ function deadAlert() {
 var win = setInterval(winAlert, 1500); // delays the function so that the user sees that they have guessed the word completely
 
 function winAlert() {
-    //var numWins = 0;
     if (Game.movie.toLowerCase() === Game.blankSpaces.join("")) {
         alert("You WIN!"); //alerts user that they won
         clearInterval(win); // makes it so that the alert doesn't repeat
-        //numWins = numWins + 1;
-        //document.getElementById("number-of-wins").innerHTML = numWins;
+        Game.numWins = Game.numWins + 1;
+        document.getElementById("number-of-wins").innerHTML = Game.numWins;
+        showBlanks(); // resets the blanks
+        //Game.guessedLetters = [];
+        //Game.guessesLeft = 6;
+        //window.location.reload(); // makes the window refresh to play a new game
+        
     }
 };
 
