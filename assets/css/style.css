@@ -1,3 +1,7 @@
+body{
+    padding-bottom: 100px;
+}
+
 .hangman-body-box {
     width: 100%;
     height: 85%;
@@ -8,7 +12,7 @@
 #blank-underscores {
     letter-spacing: 4px;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 35%;
 }
 
 h1 {
@@ -27,4 +31,25 @@ h4 {
 p {
     text-align: center;
     margin-bottom: 15px;
+}
+
+.guessed-letters p{
+    text-align: left;
+    font-size: 20px;
+}
+
+#blank-underscores {
+    font-size: 36px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 35px 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
